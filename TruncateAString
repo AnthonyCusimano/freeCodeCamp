@@ -1,0 +1,25 @@
+
+function truncateString(str, num) {
+  // Clear out that junk in your trunk
+  var T_Result = str;
+  
+  if (num < 4){
+    
+    T_Result = T_Result.slice(0, num);
+    
+    T_Result += "...";
+    
+  }
+  
+  else if (T_Result.length > num){
+    
+    T_Result = T_Result.slice(0, num-3);
+    
+    T_Result += "...";
+    
+  }
+  
+  return T_Result;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
