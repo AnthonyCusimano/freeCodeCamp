@@ -1,0 +1,35 @@
+
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+  
+  //making a copy of the array, sorted biggest to smallest, then reversing it
+  var T_Sorted = arr.sort(function(a, b){
+    return b - a;
+  });
+  
+  T_Sorted = T_Sorted.reverse();
+  
+  //now finding the proper index for num
+  for (var i = 0; i < T_Sorted.length; ++i){
+    
+    //starting from the lowest number in the array
+    //if num is less than the value here
+    if (num <= T_Sorted[i]){
+      
+      //return this index at the array
+      return i;
+      
+    }
+    
+    //else, keep trying
+    
+  }
+  
+  //if this didn't work, num is greater than any value in arr
+  return T_Sorted.length;
+  
+}
+
+//getIndexToIns([40, 60], 50);
+getIndexToIns([2, 5, 10], 15);
+//getIndexToIns([10, 20, 30, 40, 50], 30);
