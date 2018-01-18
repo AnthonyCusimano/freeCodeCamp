@@ -1,0 +1,34 @@
+<script>
+   $(document).ready(function() {
+     
+   });
+</script>
+
+<body>
+  <center><h2 id = "ID_QuoteBox">Click the button below for a random quote</h2></center>
+  <center><button id = "Button" class = "btn btn-primary" onclick = "getNewQuote()"> Click here! </button>
+  <div class = "col-xs-10">
+    <h3 id = "ID_ResultBox">here</h3>
+   </div>
+</body>
+
+//HTML END
+
+//JAVASCRIPT BEGIN
+
+//different quotes our machine can spit out
+var quotes = [
+  "This is a quote",
+  "This is also a quote"
+  
+]
+var gottenQuote = 0;
+
+//to be called whenever button is clicked to retrieve a new quote
+function getNewQuote(){
+  gottenQuote = math.floor(math.random() * (quotes.length));
+}
+
+  /*$(".btn").on("click", function(){
+      $("#ID_QuoteBox").html("test?");
+  });*/
