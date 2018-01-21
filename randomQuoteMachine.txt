@@ -1,34 +1,40 @@
-<script>
-   $(document).ready(function() {
-     
-   });
-</script>
-
 <body>
-  <center><h2 id = "ID_QuoteBox">Click the button below for a random quote</h2></center>
-  <center><button id = "Button" class = "btn btn-primary" onclick = "getNewQuote()"> Click here! </button>
+  <center><h2 id = "ID_InstructionBox">Click the button below for a random quote</h2></center>
+  <center><button id = "qbutton" class = "btn btn-primary"> Click here! </button>
   <div class = "col-xs-10">
-    <h3 id = "ID_ResultBox">here</h3>
+    <h3 id = "ID_ResultBox"></h3>
    </div>
+
 </body>
 
-//HTML END
 
 //JAVASCRIPT BEGIN
 
-//different quotes our machine can spit out
-var quotes = [
-  "This is a quote",
-  "This is also a quote"
+$(document).ready(function() {
+console.log('Document ready')
+  //different quotes our machine can spit out
+  var quotes = [
+    "This is a quote",
+    "This is also a quote",
+    "This is the third quote"
+
+  ]
+   //dunoo if these need to be global right now
+  var gottenQuoteID = 0;
+  var theQuote = '';
+
+  //to be called whenever button is clicked to retrieve a new quote
+  function getNewQuote(){
+    console.log('click')
+    //$("#ID_ResultBox").html("Yeah");
+    gottenQuoteID = Math.floor(Math.random() * (quotes.length));
+    theQuote = quotes[gottenQuoteID];
+    console.log(theQuote);
+    $("#ID_ResultBox").html(theQuote);
+  }
+
+    $("#qbutton").on("click", function(){
+      getNewQuote();
+  });
   
-]
-var gottenQuote = 0;
-
-//to be called whenever button is clicked to retrieve a new quote
-function getNewQuote(){
-  gottenQuote = math.floor(math.random() * (quotes.length));
-}
-
-  /*$(".btn").on("click", function(){
-      $("#ID_QuoteBox").html("test?");
-  });*/
+});
