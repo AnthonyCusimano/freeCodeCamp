@@ -1,22 +1,44 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
 <body>
   <center><h2 id = "ID_InstructionBox">Click the button below for a random quote</h2></center>
-  <center><button id = "qbutton" class = "btn btn-primary"> Click here! </button>
-  <div class = "col-xs-10">
-    <h3 id = "ID_ResultBox"></h3>
-   </div>
-
+  <center><button id = "ID_QuoteButton" class = "btn btn-primary"> Click here! </button>
+    <button id = "ID_TweetButton" class = "btn btn-primary">Tweet this quote</button>
+  </center>
+  <center>
+    <div>
+      <h3 id = "ID_ResultBox"></h3>
+    </div>
+  </center>
 </body>
 
+CSS BEGIN
 
-//JAVASCRIPT BEGIN
+body{
+  margin-top : 49px;  
+}
+h3{
+  font-style: oblique;  
+}
+
+JS BEGIN
 
 $(document).ready(function() {
 console.log('Document ready')
   //different quotes our machine can spit out
   var quotes = [
-    "This is a quote",
-    "This is also a quote",
-    "This is the third quote"
+    "\"Time crumbles things; everything grows old and is forgotten under the power of time\" –Aristotle",
+    "\"It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of the air, that emanation from the old trees, that so wonderfully changes and renews a weary spirit.\" –Robert Louis Stevenson",
+    "\"Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.\" –Sir Francis Bacon",
+    "\"He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken.\" –The Iliad",
+    "\"The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.\" –Pericles",
+    "\"Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.\" –William Shakespeare, Julius Caesar",
+    "\"They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.\" –The Bible, Psalms 107:23-24",
+    "\"The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.\" –Sun Tzu",
+    "\"I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.\" –F. Frankfort Moore",
+    "\"The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing\" –Socrates",
+    "\"Earth proudly wears the Parthenon as the best gem upon her zone.\" –Ralph Waldo Emerson",
+    "\"Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.\" –Sun Tzu"
 
   ]
    //dunoo if these need to be global right now
@@ -32,9 +54,28 @@ console.log('Document ready')
     console.log(theQuote);
     $("#ID_ResultBox").html(theQuote);
   }
+  
+  function TweetQuote(){
+    
+    //this only fires if the user has actually selected a quote
+    if (theQuote != ''){
+      window.open('https://twitter.com/intent/tweet?hashtags= freecodecamp&text='   + encodeURIComponent(theQuote));
+      console.log("this would tweet a quote");
+      
+    }
+    
+    //this case is only for when the user hasn't generated a quote using the button
+    else
+      console.log("This would NOT tweet a quote");
+    
+  }
 
-    $("#qbutton").on("click", function(){
+    $("#ID_QuoteButton").on("click", function(){
       getNewQuote();
+  });
+  
+  $("#ID_TweetButton").on("click", function(){
+    TweetQuote();    
   });
   
 });
