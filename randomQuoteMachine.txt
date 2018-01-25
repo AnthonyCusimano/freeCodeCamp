@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
 <body>
   <center><h2 id = "ID_InstructionBox">Click the button below for a random quote</h2></center>
   <center><button id = "ID_QuoteButton" class = "btn btn-primary"> Click here! </button>
@@ -27,18 +25,18 @@ $(document).ready(function() {
 console.log('Document ready')
   //different quotes our machine can spit out
   var quotes = [
-    "\"Time crumbles things; everything grows old and is forgotten under the power of time\" –Aristotle",
-    "\"It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of the air, that emanation from the old trees, that so wonderfully changes and renews a weary spirit.\" –Robert Louis Stevenson",
-    "\"Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.\" –Sir Francis Bacon",
-    "\"He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken.\" –The Iliad",
-    "\"The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.\" –Pericles",
-    "\"Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.\" –William Shakespeare, Julius Caesar",
-    "\"They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.\" –The Bible, Psalms 107:23-24",
-    "\"The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.\" –Sun Tzu",
-    "\"I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.\" –F. Frankfort Moore",
-    "\"The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing\" –Socrates",
-    "\"Earth proudly wears the Parthenon as the best gem upon her zone.\" –Ralph Waldo Emerson",
-    "\"Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.\" –Sun Tzu"
+    "\"Time crumbles things; everything grows old and is forgotten under the power of time\" â€“Aristotle",
+    "\"It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of the air, that emanation from the old trees, that so wonderfully changes and renews a weary spirit.\" â€“Robert Louis Stevenson",
+    "\"Libraries are as the shrine where all the relics of the ancient saints, full of true virtue, and all that without delusion or imposture are preserved and reposed.\" â€“Sir Francis Bacon",
+    "\"He spoke, the son of Kronos, and nodded his head with the dark brows, and the immortally anointed hair of the great god swept from his divine head, and all Olympos was shaken.\" â€“The Iliad",
+    "\"The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.\" â€“Pericles",
+    "\"Why man, he doth bestride the narrow world like a colossus, and we petty men walk under his huge legs, and peep about to find ourselves dishonorable graves.\" â€“William Shakespeare, Julius Caesar",
+    "\"They that go down to the sea in ships, that do business in great waters; these see the works of the Lord, and his wonders in the deep.\" â€“The Bible, Psalms 107:23-24",
+    "\"The art of war teaches us to rely not on the likelihood of the enemy's not attacking, but rather on the fact that we have made our position unassailable.\" â€“Sun Tzu",
+    "\"I think that if ever a mortal heard the word of God it would be in a garden at the cool of the day.\" â€“F. Frankfort Moore",
+    "\"The ancient Oracle said that I was the wisest of all the Greeks. It is because I alone, of all the Greeks, know that I know nothing\" â€“Socrates",
+    "\"Earth proudly wears the Parthenon as the best gem upon her zone.\" â€“Ralph Waldo Emerson",
+    "\"Regard your soldiers as your children, and they will follow you into the deepest valleys; look on them as your own beloved sons, and they will stand by you even unto death.\" â€“Sun Tzu"
 
   ]
    //dunoo if these need to be global right now
