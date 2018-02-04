@@ -1,5 +1,14 @@
 <body>
-  <center><h1 id = "data">FreeCodeCamp weather app<br></h3></center>
+  <center><div id = "Tester">
+    <h1 id = "data">FreeCodeCamp weather app<br></h3>
+    <h2 id = "positionHere"></h2>
+    <h2 id = "tempHere"></h2>
+    
+    </div></center>
+  <center><div id = "button_div">
+    <button id = "ID_TempChanger" class = "btn btn-primary">Click for fahrenheit</button>
+    
+  </div></center>
   
 </body>
 
@@ -14,36 +23,72 @@ h1{
   color : #FFFFFF;
   font-style : oblique;    
 }
+h2{
+  color : #FFFFFF;
+  font-style : oblique;  
+}
+img{
+  height : 64px;
+  width : 64px;  
+}
 
 //JS BEGIN
 
 $(document).ready(function() {
   
+  //the image retreaved from the API
+  var ourImage = $('<img id="dynamic">');
+  
   //this is the user's position
   var positionLat = 0;
   var positionLong = 0;
-  //this will be the user's tempurature
-  var temp = 0;
+  //this will be the user's tempurature in celsius and fahrenheit
+  var tempCel = 0;
+  var tempFah = 0;
+  //variable to keep track of if we're displaying celsius or fahrenheit
+  //0 for calcius 1 for fahrenheit
+  var booleanCelFah = 0;
   //debug
   console.log("Doc Ready");
   //taken from earlier challenge
   if (navigator.geolocation) {
     
+    //retreaving positional data
     navigator.geolocation.getCurrentPosition(function(position) {
       positionLat = position.coords.latitude;
       positionLong = position.coords.longitude;
-      
-      $("#data").html("latitude: " + positionLat + "<br> longtitude: " + positionLong);
+      //placing this information in our document
+      //could also be done as a console.log()
+      $("#positionHere").html("latitude: " + positionLat + "<br> longtitude: " + positionLong);
       
       $.ajax({
         url: "https://fcc-weather-api.glitch.me/api/current?lat="+positionLat+"&lon=" +positionLong,
       }).done(function(response) {
-        console.log("response Get", response.main.temp);
+        //console.log(response);
+        //retreaving the temperature at that location, in celsius
+        tempCel = response.main.temp
+        //this formula just works
+        tempFah = (tempCel * 1.8) + 32;
+        $("#tempHere").html("The tempurature is currently: "+ tempCel);
+        //retreaving the image
+        //challenge page says to just use weather[0]?
+        ourImage.attr("src", response.weather[0].icon);
+        //adding the image
+        ourImage.appendTo("#Tester");
+        //donezo
         $( this ).addClass( "done" );
       });
     });
-    
-}
+  } 
   
-  
+  //when you click the temp changer
+  $("#ID_TempChanger").on("click", function(){
+    if (booleanCelFah == 0){
+      //flip to fahrenheit
+      booleanCelFah = 1;
+      $("#ID_TempChanger").html("Click for celsius");
+
+      
+    }
+  });
 });
