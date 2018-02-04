@@ -83,12 +83,24 @@ $(document).ready(function() {
   
   //when you click the temp changer
   $("#ID_TempChanger").on("click", function(){
+    console.log(tempFah);
+    console.log(tempCel);
+    
     if (booleanCelFah == 0){
       //flip to fahrenheit
       booleanCelFah = 1;
       $("#ID_TempChanger").html("Click for celsius");
-
-      
+      //change tempHere to show fahrenheit conversion
+      $("#tempHere").html("The tempurature is currently: "+ tempFah);      
     }
+    //flip back to celsius
+    else{
+      //flip back
+      booleanCelFah = 0;
+       $("#ID_TempChanger").html("Click for fahrenheit");
+      //change tempHere to show celsius conversion
+      $("#tempHere").html("The tempurature is currently: "+ tempCel);    
+    }
+    
   });
 });
