@@ -1,0 +1,33 @@
+function reducer(accumulator, currentValue){
+  
+  return accumulator + currentValue;
+  
+}
+
+function sumAll(arr) {
+  
+  //our array including the numbers between the two in arr
+  var realArray = arr;
+  //low and high number
+  var valueLow =  Math.min(...arr);
+  var valueHigh = Math.max(...arr);
+  
+  //pushing every value into our new array
+  for (var i = valueLow; i < valueHigh; ++i){
+    
+    console.log("i is " + i);
+    
+    realArray.push(i);
+    
+  }
+  
+  //this seems a bit hacky
+  
+  console.log(realArray);
+  
+  var result = realArray.reduce(reducer) - valueLow;
+    
+  return result;
+}
+
+sumAll([1, 4]);
