@@ -1,0 +1,32 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];  
+  
+  //search through arr1 and see if arr2 contains an equal value
+  for (var i = 0; i < arr1.length; ++i){
+    
+    if(!arr2.includes(arr1[i])){
+      
+      //if not, push it into the new array
+      newArr.push(arr1[i]);
+      
+    }
+    //if it does contain an equal value, no action should be taken
+  }
+  
+  //I very rarely use forEach functions so I thought I'd try to use it here
+  //this does the same action as above, but comparing elements from array 2
+  //to array one
+  arr2.forEach(function(element){
+    
+    if (!arr1.includes(element)){
+      
+      newArr.push(element);
+      
+    }
+    
+  });
+  
+  // Same, same; but different.  
+  return newArr;
+}
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
