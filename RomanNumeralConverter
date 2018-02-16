@@ -1,0 +1,84 @@
+
+function convertToRoman(num) {
+  
+  var numCopy = num;
+  var RomanString = [];
+  
+  //1000
+  while (numCopy > 999){    
+    numCopy -= 1000;    
+    RomanString.push('M');    
+  }  
+  //900
+  while (numCopy > 899){
+    numCopy -= 900;
+    RomanString.push("CM");
+  }
+  //500
+  while (numCopy > 499){    
+    numCopy -= 500;    
+    RomanString.push('D');    
+  }  
+  //400
+  while (numCopy > 399){
+    numCopy -= 400;
+    RomanString.push("CD");
+  }
+  //100
+  while (numCopy > 99){    
+    numCopy -= 100;
+    RomanString.push('C');    
+  }  
+  //90
+  while (numCopy > 89){
+    numCopy -=90;
+    RomanString.push("XC");
+  }
+  //50
+  while (numCopy > 49){    
+    numCopy -= 50;
+    RomanString.push('L');    
+  }  
+  //40
+  while (numCopy > 39){
+    numCopy -= 40;
+    RomanString.push("XL");
+  }
+  //10
+  while (numCopy > 9){
+    numCopy -= 10;
+    RomanString.push('X');    
+  }
+  //9
+  while (numCopy > 8){
+    numCopy -=9;
+    RomanString.push("IX");
+  }
+  //5
+  //could be numCopy == 5
+  while(numCopy > 4){
+    numCopy -= 5;
+    RomanString.push('V');
+  }
+  //4
+  while(numCopy > 3){
+    numCopy -= 4;
+    RomanString.push("IV");
+  }
+  //1
+  while (numCopy > 0){
+    --numCopy;
+    RomanString.push('I');
+  }
+  console.log("Decimal number is: " + num); 
+  
+  var actualstring = RomanString.join('');
+  
+  console.log(actualstring);
+  
+  
+  //do this for fucking ever until you get past ones
+  
+ return actualstring;
+}
+convertToRoman(36);
