@@ -1,0 +1,41 @@
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  //arr.push(collection[0]);
+  
+  //finding the correct element to check for later
+  for(var i = 0; i < collection.length; ++i){
+    
+    console.log(Object.getOwnPropertyNames(source));
+    
+    //console.log("In the for");
+    
+    if (collection[i].hasOwnProperty("last")){
+      
+      //console.log("same");
+      
+      if (collection[i].last == source.last){
+        
+        //console.log(collection[i]);
+        //arr.push(collection[i]);
+        
+      }
+      
+    }
+    
+  }
+  
+  /*if (collection[2].hasOwnProperty("last")){
+    
+    console.log(source);
+    
+  }*/
+  
+  
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
