@@ -1,0 +1,38 @@
+<body>
+  <center>
+    <div id = "ID_DIV1">
+    
+       <button id = "ID_Rando" class = "btn btn-primary" onclick="window.open('https://en.wikipedia.org/wiki/Special:Random')">Click for a random Wikipedia page</button>
+    
+    </div>
+    <div id = "ID_DIV2">
+      <h3>Use the field below to search</h3>
+      
+      
+    </div>
+  </center>  
+</body>
+
+//CSS BEGIN
+
+body{
+  margin-top : 49px;
+  background-color : #323232;
+}
+
+h3{  
+  color : #FFFFFF;  
+}
+
+//JS BEGIN
+
+//the string the user searched
+var userSearch = '';
+$(document).ready(function() {
+
+$("#ID_SearchHelper").on("click", function(){
+     
+     userSearch = $("#ID_SEARCHER").val()
+     console.log(userSearch);
+   });  
+});
